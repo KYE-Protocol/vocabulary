@@ -1,8 +1,26 @@
 # KYE™ Relationship Vocabulary
 
-Relationships are typed edges between entities. This document lists the relationship types KYE™ recognizes.
+Relationships are typed edges between KYE Protocol™ entities. This document lists the relationship types KYE™ recognizes.
 
 This document defines **names only**. Validation rules, evidence requirements, and lifecycle constraints are part of the normative specification.
+
+## v3 canonical relationship edges (locked 2026-05-14)
+
+The five canonical edges cover the most common cross-entity relationships
+in the v3 hierarchy. Every edge is explicit — it is stored as a
+`kye:rel:…` record and governed by an authority grant.
+
+| Edge type | Typical source | Typical target | Meaning |
+|---|---|---|---|
+| `member_of` | Principal (`kye:prin:…`) | Team (`kye:team:…`) | The principal is a member of the team and inherits its RBAC grants. |
+| `acts_in` | Principal (`kye:prin:…`) | Workspace (`kye:wsp:…`) | The principal is authorized to act within the workspace. |
+| `granted_access_to` | Principal / Agent / External App | Resource / Model / Tool | The source holds an authority grant to use the target. |
+| `uses` | Agent Principal (`kye:prin:…`) | Model (`kye:model:…`) or Tool (`kye:tool:…`) | The agent invokes the model or tool during its operation. |
+| `applies_to` | Policy Bundle (`kye:pol:…`) | Workspace / Project / Team | The policy bundle is in force for the target scope. |
+
+These five edges are the minimum a conformant implementation MUST store
+as relationship records. Additional edges from the full catalogue below
+are optional extensions.
 
 ## Ownership and control
 
