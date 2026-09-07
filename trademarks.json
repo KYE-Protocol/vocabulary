@@ -1,5 +1,6 @@
 {
   "$schema": "https://kyeprotocol.com/schemas/vocabulary/trademarks.v1.json",
+  "registry_id": "kye:registry:trademarks",
   "constitution_ref": "constitution/01-NAMING.md",
   "schema_version": "kye.trademarks.v1",
   "description": "Single source of truth for KYE Protocol™ protected marks. The audit script scripts/audit-trademarks.mjs reads this file and enforces first-prominent-use ™ on every public-facing surface.",
